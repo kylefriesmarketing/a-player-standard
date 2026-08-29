@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The A-Player Standard</title>
+<meta name="description" content="What defines an A player in every restaurant position — server, cook, host, bar, server assistant — plus the standards that apply to everyone.">
+<meta property="og:title" content="The A-Player Standard">
+<meta property="og:description" content="What the best person in every restaurant position actually does — written so it can be hired against, coached against, and promoted against.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥩</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  :root{
+    --paper:#faf8f4;
+    --surface:#f1ece2;
+    --ink:#23201c;
+    --smoke:#6b645a;
+    --wine:#6e1423;
+    --brass:#a8863c;
+    --hairline:#ddd5c6;
+    --test-bg:#f4ede4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1b1815;
+      --surface:#242019;
+      --ink:#ece7dd;
+      --smoke:#a59d8f;
+      --wine:#d4838f;
+      --brass:#c9a55c;
+      --hairline:#3c362c;
+      --test-bg:#241f19;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1b1815;
+    --surface:#242019;
+    --ink:#ece7dd;
+    --smoke:#a59d8f;
+    --wine:#d4838f;
+    --brass:#c9a55c;
+    --hairline:#3c362c;
+    --test-bg:#241f19;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+    font-size:1.0625rem;
+    line-height:1.62;
+  }
+
+  .page{
+    max-width:46rem;
+    margin:0 auto;
+    padding:3.5rem 1.5rem 4.5rem;
+  }
+
+  /* ---------- masthead, set like the front of a menu ---------- */
+  header{
+    text-align:center;
+    margin-bottom:3rem;
+  }
+  .overline{
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 1.1rem;
+  }
+  .rule{
+    border:none;
+    border-top:1px solid var(--brass);
+    width:5.5rem;
+    margin:1.4rem auto;
+  }
+  h1{
+    font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    font-weight:600;
+    font-size:clamp(2.5rem,7vw,3.6rem);
+    line-height:1.05;
+    letter-spacing:.01em;
+    margin:0;
+    text-wrap:balance;
+  }
+  .subtitle{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-style:italic;
+    font-size:1.25rem;
+    color:var(--smoke);
+    margin:.9rem auto 0;
+    max-width:34rem;
+    text-wrap:balance;
+  }
+
+  /* ---------- role index ---------- */
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.35rem .5rem;
+    margin:0 0 3.2rem;
+    padding:0.85rem 0;
+    border-top:1px solid var(--hairline);
+    border-bottom:1px solid var(--hairline);
+  }
+  nav a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:.76rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    padding:.3rem .6rem;
+  }
+  nav a:hover, nav a:focus-visible{ color:var(--wine); }
+  a:focus-visible{ outline:2px solid var(--brass); outline-offset:2px; border-radius:2px; }
+  nav .sep{ color:var(--brass); align-self:center; font-size:.7rem; }
+
+  /* ---------- intro ---------- */
+  .intro p{ margin:0 0 1.1rem; }
+  .intro strong{ font-weight:700; }
+  .grades{
+    margin:1.6rem 0 0;
+    border-top:1px solid var(--hairline);
+  }
+  .grades > div{
+    display:grid;
+    grid-template-columns:2.4rem 1fr;
+    gap:1rem;
+    padding:.85rem 0;
+    border-bottom:1px solid var(--hairline);
+    align-items:baseline;
+  }
+  .grade-letter{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-weight:700;
+    font-size:1.7rem;
+    line-height:1;
+    color:var(--wine);
+    text-align:center;
+  }
+  .grades p{ margin:0; }
+  .grades .g-name{ font-weight:700; }
+
+  /* ---------- role sections ---------- */
+  section{
+    margin-top:3.4rem;
+    scroll-margin-top:1.5rem;
+  }
+  .role-head{
+    border-top:2px solid var(--ink);
+    padding-top:1.1rem;
+  }
+  .role-kicker{
+    font-size:.7rem;
+    font-weight:600;
+    letter-spacing:.26em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin:0 0 .2rem;
+  }
+  h2{
+    font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+    font-weight:600;
+    font-size:2.15rem;
+    line-height:1.1;
+    margin:0 0 .5rem;
+  }
+  .definition{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-style:italic;
+    font-size:1.28rem;
+    line-height:1.45;
+    color:var(--smoke);
+    margin:0 0 1.4rem;
+    max-width:36rem;
+  }
+
+  ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  ul li{
+    position:relative;
+    padding:0 0 0 1.35rem;
+    margin:0 0 .85rem;
+  }
+  ul li::before{
+    content:"";
+    position:absolute;
+    left:.1rem;
+    top:.62em;
+    width:.32rem;
+    height:.32rem;
+    background:var(--brass);
+    transform:rotate(45deg);
+  }
+  li strong{ font-weight:700; }
+
+  .test{
+    margin:1.7rem 0 0;
+    padding:.95rem 1.2rem;
+    background:var(--test-bg);
+    border-left:3px solid var(--wine);
+  }
+  .test .t-label{
+    display:block;
+    font-size:.68rem;
+    font-weight:700;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--wine);
+    margin-bottom:.25rem;
+  }
+  .test p{
+    margin:0;
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-style:italic;
+    font-size:1.22rem;
+    line-height:1.4;
+  }
+
+  /* ---------- closing ---------- */
+  footer{
+    margin-top:3.6rem;
+    padding-top:1.6rem;
+    border-top:1px solid var(--hairline);
+    text-align:center;
+  }
+  footer p{
+    margin:0 auto;
+    max-width:36rem;
+    color:var(--smoke);
+  }
+  footer .close-line{
+    font-family:"Cormorant Garamond",Georgia,serif;
+    font-style:italic;
+    font-size:1.3rem;
+    color:var(--ink);
+    margin-bottom:.7rem;
+    text-wrap:balance;
+  }
+
+  @media print{
+    body{ background:#fff; color:#111; }
+    nav{ display:none; }
+    section{ margin-top:2rem; }
+    .test{ border:1px solid #999; border-left:3px solid #333; background:#fff; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <p class="overline">Staff Standards &middot; Front &amp; Back of House</p>
+    <h1>The A&#8209;Player Standard</h1>
+    <hr class="rule">
+    <p class="subtitle">What the best person in every position actually does &mdash; written so it can be hired against, coached against, and promoted against.</p>
+  </header>
+
+  <nav aria-label="Roles">
+    <a href="#general">General</a><span class="sep">&#10022;</span>
+    <a href="#server">Server</a><span class="sep">&#10022;</span>
+    <a href="#cook">Cook</a><span class="sep">&#10022;</span>
+    <a href="#host">Host</a><span class="sep">&#10022;</span>
+    <a href="#bar">Bar</a><span class="sep">&#10022;</span>
+    <a href="#sa">Server Assistant</a>
+  </nav>
+
+  <div class="intro">
+    <p>An A player is not just someone who is good at their job. It is someone who <strong>raises the standard of everyone working around them</strong>. Two quick tests tell you who they are: the <strong>rehire test</strong> &mdash; if they gave notice tomorrow, would you fight to keep them? &mdash; and the <strong>clone test</strong> &mdash; if the whole staff worked exactly like this person, would the restaurant be busier or emptier in six months?</p>
+    <div class="grades">
+      <div>
+        <span class="grade-letter">A</span>
+        <p><span class="g-name">Raises the bar.</span> Same standard every shift, coachable, team-first, guests and coworkers both want them there. You would fight to keep them.</p>
+      </div>
+      <div>
+        <span class="grade-letter">B</span>
+        <p><span class="g-name">Carries the job.</span> Reliable and solid &mdash; the backbone of the schedule. Worth investing in, because most A players are B players somebody developed.</p>
+      </div>
+      <div>
+        <span class="grade-letter">C</span>
+        <p><span class="g-name">Does the minimum.</span> Needs constant supervision and quietly lowers the standard for everyone else. Coach up fast, or coach out.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="general">
+    <div class="role-head">
+      <p class="role-kicker">Every Position</p>
+      <h2>General</h2>
+    </div>
+    <p class="definition">The non-negotiables. None of the role-specific skill below matters without these &mdash; this is the entry fee.</p>
+    <ul>
+      <li><strong>Reliability first.</strong> Early, in full uniform, clean, and ready at shift start. No-shows and chronic call-outs cancel out every other strength on this page.</li>
+      <li><strong>Same standard every shift.</strong> A dead Tuesday at 5 p.m. gets the same effort and polish as a packed Saturday at 8. Consistency is the whole definition of professional.</li>
+      <li><strong>Team-first, always.</strong> Full hands in, full hands out. Never says &ldquo;not my table,&rdquo; &ldquo;not my section,&rdquo; or &ldquo;not my job.&rdquo;</li>
+      <li><strong>Owns mistakes fast.</strong> Says it, fixes it, tells a manager. No hiding, no excuses, no blaming the kitchen, the floor, or the guest.</li>
+      <li><strong>Calm under fire.</strong> The busier it gets, the more focused they get. Never spreads panic, never snaps at a teammate in front of guests.</li>
+      <li><strong>Coachable without ego.</strong> Takes correction, applies it, and doesn&rsquo;t need to hear the same thing twice.</li>
+      <li><strong>Guest-first reflex.</strong> Any guest problem within reach becomes their problem until it is solved or handed to a manager &mdash; regardless of whose table it is.</li>
+      <li><strong>Clean as they go.</strong> Respects the building, the equipment, and the uniform. Leaves every station better than they found it.</li>
+      <li><strong>Honest, period.</strong> With money, with time, with product, with mistakes.</li>
+      <li><strong>Makes others better.</strong> Trains new people willingly, sets the tone in the room, and never poisons the shift with gossip or negativity.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>If the entire crew worked exactly like this person, would you be busier or emptier in six months?</p>
+    </div>
+  </section>
+
+  <section id="server">
+    <div class="role-head">
+      <p class="role-kicker">Front of House</p>
+      <h2>Server</h2>
+    </div>
+    <p class="definition">A professional salesperson and the host of their own section &mdash; not an order-taker.</p>
+    <ul>
+      <li><strong>Knows the menu cold.</strong> Every cut, temp, portion, side, sauce, and price &mdash; and can explain the difference between the ribeye and the strip with confidence. Knows the wine list well enough to pair by taste and by budget.</li>
+      <li><strong>Sells without pressure.</strong> Builds the check with appetizers, wine, sides, dessert, and after-dinner drinks &mdash; and the guest feels taken care of, never hustled. Highest check average in the building with zero complaints about pushiness.</li>
+      <li><strong>Temps are sacred.</strong> Repeats every temp back, rings it right, and checks the cut at the table after it lands &mdash; catching the kitchen&rsquo;s mistake before the guest ever does.</li>
+      <li><strong>Reads the table.</strong> Anniversary, business dinner, regulars, tourists &mdash; adjusts pace, conversation, and timing to match. Knows when to be present and when to be invisible.</li>
+      <li><strong>Owns the timing.</strong> Fires courses so nothing dies in the window and no table sits staring at empty plates. The meal has a rhythm because the server built one.</li>
+      <li><strong>Table maintenance is automatic.</strong> Pre-bussing, crumbing, refills, fresh silver between courses &mdash; the table always looks like it was just set.</li>
+      <li><strong>Never walks empty-handed.</strong> Runs food and drinks for any table in the building, and watches the neighboring sections without keeping score.</li>
+      <li><strong>Handles problems on the spot.</strong> Wrong temp or an unhappy guest: apologize, fix it immediately, loop in a manager &mdash; and the guest leaves planning their next visit instead of writing a review.</li>
+      <li><strong>Clean money.</strong> Accurate ringing, correct checks, splits handled right, cash to the penny.</li>
+      <li><strong>Sidework done right</strong> without being checked on &mdash; opening, running, and closing.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>Do guests ask for them by name &mdash; and do their teammates want to work next to them?</p>
+    </div>
+  </section>
+
+  <section id="cook">
+    <div class="role-head">
+      <p class="role-kicker">Back of House</p>
+      <h2>Cook</h2>
+    </div>
+    <p class="definition">Consistency you can build a menu on. The guest never knows who cooked their steak &mdash; and never needs to.</p>
+    <ul>
+      <li><strong>Nails temps, every time.</strong> Medium-rare is medium-rare at 6:00 and at 9:45, on the first steak of the night and the two-hundredth.</li>
+      <li><strong>Every plate matches the standard.</strong> Wouldn&rsquo;t send anything they wouldn&rsquo;t proudly eat themselves &mdash; and pulls a plate that misses rather than hoping it slides.</li>
+      <li><strong>Fast and right.</strong> Keeps ticket times down through the push without cutting a single corner. Speed that costs quality isn&rsquo;t speed.</li>
+      <li><strong>Station always ready.</strong> Prepped to par, backups where they belong, never caught short mid-rush.</li>
+      <li><strong>Food safety is a reflex.</strong> Dates, labels, rotation, holding temps, gloves, cross-contamination &mdash; done automatically, not because someone&rsquo;s watching.</li>
+      <li><strong>Communicates loud and early.</strong> Calls back orders, flags long tickets, 86&rsquo;s items before the floor sells them, and tells the expo or a manager about a problem before it reaches a table.</li>
+      <li><strong>Treats product like money.</strong> Exact portions, rare refires, low waste &mdash; because food cost is the difference between a good month and a bad one.</li>
+      <li><strong>Moves between stations.</strong> Broiler, saut&eacute;, fry, pantry &mdash; goes where the night needs them without complaint.</li>
+      <li><strong>Works the problem in the weeds.</strong> No thrown tongs, no yelling at servers, no melting down &mdash; just the next ticket, done right.</li>
+      <li><strong>Teaches the standard.</strong> Shows the new cook how it&rsquo;s done here instead of hoarding knowledge.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>When they&rsquo;re on the line, do the managers stop worrying about the kitchen?</p>
+    </div>
+  </section>
+
+  <section id="host">
+    <div class="role-head">
+      <p class="role-kicker">Front of House</p>
+      <h2>Host</h2>
+    </div>
+    <p class="definition">Runs the door like a control tower &mdash; the first impression, the last impression, and the pace of the entire night.</p>
+    <ul>
+      <li><strong>Warm within seconds.</strong> Every guest greeted like they were expected, every departure gets a genuine goodbye. Never a flat &ldquo;how many?&rdquo; with dead eyes.</li>
+      <li><strong>Owns the book.</strong> Reservations accurate, waitlist honest, quotes real times and then beats them. Trust at the door is the restaurant&rsquo;s trust.</li>
+      <li><strong>Seats with the whole building in mind.</strong> Balances server sections and the kitchen&rsquo;s pace &mdash; never slams one station or buries the line to empty the lobby faster.</li>
+      <li><strong>Knows the room cold.</strong> Table numbers, sections, rotation, which tables combine for large parties, where the regulars like to sit.</li>
+      <li><strong>The phone is the restaurant.</strong> Answers fast and warm, takes reservations right the first time, and handles menu, hours, and directions questions with confidence &mdash; to that caller, the phone voice is the whole brand.</li>
+      <li><strong>Spots and shares intel.</strong> VIPs, regulars, birthdays, anniversaries, allergies &mdash; passed to the server and manager before the party sits down.</li>
+      <li><strong>Composed when the lobby is packed.</strong> Guests waiting on tables get honesty, updates, and warmth &mdash; not deflection or a shrug.</li>
+      <li><strong>Keeps the first ten feet perfect.</strong> Entrance, menus, and restrooms checked and guest-ready all night.</li>
+      <li><strong>Fills the gaps.</strong> Drops waters and bread, helps reset tables, and walks guests to their seats with conversation instead of silence.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>On a 45-minute wait, do guests choose to stay &mdash; and leave glad they did?</p>
+    </div>
+  </section>
+
+  <section id="bar">
+    <div class="role-head">
+      <p class="role-kicker">Front of House</p>
+      <h2>Bar</h2>
+    </div>
+    <p class="definition">Two jobs done perfectly at once: full service for the bar top, and the drink engine for the entire floor.</p>
+    <ul>
+      <li><strong>Exact and consistent.</strong> Right recipe, right pour, right glass &mdash; a martini tastes identical no matter who ordered it or when.</li>
+      <li><strong>The service well never waits.</strong> Floor tickets move fast even mid-conversation; servers never stand around watching their drinks die in the well.</li>
+      <li><strong>The bar top is a section, not a parking lot.</strong> Full food service, temps rung right, courses timed, guests read &mdash; everything an A-player server does, done from behind the bar.</li>
+      <li><strong>Wine and spirits fluency.</strong> Can walk a guest through the list, answer &ldquo;what&rsquo;s good?&rdquo; with a real recommendation, and move premium pours naturally.</li>
+      <li><strong>Pour-cost discipline.</strong> No over-pours, no unrung drinks, no buybacks without a manager &mdash; protects margin like it&rsquo;s their own money, and the drawer counts right.</li>
+      <li><strong>Responsible service, with class.</strong> IDs checked, intoxication watched, and knows how to slow someone down or cut them off without a scene. Protects the guests and the license.</li>
+      <li><strong>Set up before the rush.</strong> Juices, garnishes, batches, glassware, and ice stocked before doors &mdash; and restocked before anything runs dry.</li>
+      <li><strong>Spotless in full view.</strong> Wiped rails, polished glassware, clean wells, fresh garnishes &mdash; bar guests watch everything.</li>
+      <li><strong>Partners with the barback and the floor.</strong> Answers server questions with patience, never attitude &mdash; the bar sets the tone for the whole room.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>Fast enough that the floor never waits, personal enough that bar regulars come back weekly &mdash; both at once.</p>
+    </div>
+  </section>
+
+  <section id="sa">
+    <div class="role-head">
+      <p class="role-kicker">Front of House</p>
+      <h2>Server Assistant</h2>
+    </div>
+    <p class="definition">The invisible engine of the dining room &mdash; and, done right, the next great server in training.</p>
+    <ul>
+      <li><strong>Hustle with polish.</strong> Moves fast without ever looking rushed to a guest.</li>
+      <li><strong>Flips win the night.</strong> A table cleared, cleaned, and reset fast and <em>right</em> is another seating &mdash; settings aligned, silver polished, nothing missing.</li>
+      <li><strong>Full hands both directions,</strong> every trip, all shift.</li>
+      <li><strong>Anticipates.</strong> Waters topped at half, bread down before it&rsquo;s asked for, the paying table spotted and the reset staged, the server in the weeds helped without being asked.</li>
+      <li><strong>Runs food right.</strong> Knows position numbers, lands plates at the correct seat without auctioning (&ldquo;who had the ribeye?&rdquo;), presents properly.</li>
+      <li><strong>Whole-room eyes.</strong> Covers every section&rsquo;s basics, not just an assigned zone.</li>
+      <li><strong>Reads the table before clearing.</strong> Never rips a plate from a guest mid-conversation, never lets a finished course sit either.</li>
+      <li><strong>Stations never run dry.</strong> Ice, glassware, silver, linen, and bread stocked ahead of need &mdash; the floor never stops because supply did.</li>
+      <li><strong>Invisible around guests.</strong> Quiet, polite, professional; steps back when the server is talking to the table.</li>
+      <li><strong>Treats the job as an apprenticeship.</strong> Learning the menu, watching the best servers, asking questions &mdash; building toward promotion.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>When they&rsquo;re on, do the sections run themselves &mdash; and do you already know they&rsquo;ll make a great server?</p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="close-line">A players are hired sometimes &mdash; and made constantly.</p>
+    <p>This page is a coaching map as much as a grading sheet: it tells every B player exactly what the next level looks like, in their own position, in observable behaviors. Hire against it, schedule against it, promote against it.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
