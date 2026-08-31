@@ -4,44 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The A-Player Standard</title>
-<meta name="description" content="What defines an A player in every restaurant position — server, cook, host, bar, server assistant — plus the standards that apply to everyone.">
-<meta property="og:title" content="The A-Player Standard">
-<meta property="og:description" content="What the best person in every restaurant position actually does — written so it can be hired against, coached against, and promoted against.">
+<meta name="description" content="What defines an A player in every position at New York Prime — server, cook, host, bar, server assistant — and the standards that apply to everyone.">
+<meta name="theme-color" content="#131211">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The A-Player Standard · New York Prime">
+<meta property="og:description" content="What the best person in every position actually does — server, cook, host, bar, and server assistant — written so it can be hired against, coached against, and promoted against.">
+<meta property="og:url" content="https://kylefriesmarketing.github.io/a-player-standard/">
+<meta property="og:image" content="https://kylefriesmarketing.github.io/a-player-standard/assets/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The A-Player Standard · New York Prime">
+<meta name="twitter:description" content="What the best person in every position actually does — written so it can be hired against, coached against, and promoted against.">
+<meta name="twitter:image" content="https://kylefriesmarketing.github.io/a-player-standard/assets/hero.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥩</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Urbanist:ital,wght@0,400;0,600;0,700;1,400&display=swap">
 <style>
+  /* New York Prime palette — sampled from newyorkprime.com:
+     antique gold #a49557 on charcoal blacks, warm white type */
   :root{
-    --paper:#faf8f4;
-    --surface:#f1ece2;
-    --ink:#23201c;
-    --smoke:#6b645a;
-    --wine:#6e1423;
-    --brass:#a8863c;
-    --hairline:#ddd5c6;
-    --test-bg:#f4ede4;
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --paper:#1b1815;
-      --surface:#242019;
-      --ink:#ece7dd;
-      --smoke:#a59d8f;
-      --wine:#d4838f;
-      --brass:#c9a55c;
-      --hairline:#3c362c;
-      --test-bg:#241f19;
-    }
-  }
-  :root[data-theme="dark"]{
-    --paper:#1b1815;
-    --surface:#242019;
-    --ink:#ece7dd;
-    --smoke:#a59d8f;
-    --wine:#d4838f;
-    --brass:#c9a55c;
-    --hairline:#3c362c;
-    --test-bg:#241f19;
+    --ground:#131211;
+    --panel:#1b1916;
+    --ink:#f2ede2;
+    --smoke:#9c958a;
+    --gold:#a49557;
+    --gold-lift:#c3b478;
+    --hairline:#2d2a24;
+    --test-bg:#1a1814;
   }
 
   *{box-sizing:border-box}
@@ -50,55 +38,84 @@
 
   body{
     margin:0;
-    background:var(--paper);
+    background:var(--ground);
     color:var(--ink);
-    font-family:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+    font-family:"Urbanist","Segoe UI",system-ui,-apple-system,sans-serif;
     font-size:1.0625rem;
     line-height:1.62;
   }
 
-  .page{
-    max-width:46rem;
-    margin:0 auto;
-    padding:3.5rem 1.5rem 4.5rem;
-  }
-
-  /* ---------- masthead, set like the front of a menu ---------- */
-  header{
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    min-height:min(78vh,40rem);
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    overflow:hidden;
     text-align:center;
-    margin-bottom:3rem;
+  }
+  .hero-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 40%;
+  }
+  .hero-scrim{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,
+      rgba(19,18,17,.34) 0%,
+      rgba(19,18,17,.55) 45%,
+      rgba(19,18,17,.9) 82%,
+      #131211 100%);
+  }
+  .hero-content{
+    position:relative;
+    padding:6rem 1.5rem 3.2rem;
+    max-width:46rem;
   }
   .overline{
-    font-size:.72rem;
-    font-weight:600;
-    letter-spacing:.28em;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.34em;
     text-transform:uppercase;
-    color:var(--brass);
+    color:var(--gold-lift);
     margin:0 0 1.1rem;
   }
   .rule{
     border:none;
-    border-top:1px solid var(--brass);
+    border-top:1px solid var(--gold);
     width:5.5rem;
     margin:1.4rem auto;
   }
   h1{
     font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif;
     font-weight:600;
-    font-size:clamp(2.5rem,7vw,3.6rem);
-    line-height:1.05;
+    font-size:clamp(2.6rem,7.5vw,4rem);
+    line-height:1.03;
     letter-spacing:.01em;
     margin:0;
+    color:#fdfaf3;
     text-wrap:balance;
+    text-shadow:0 2px 24px rgba(0,0,0,.55);
   }
   .subtitle{
     font-family:"Cormorant Garamond",Georgia,serif;
     font-style:italic;
-    font-size:1.25rem;
-    color:var(--smoke);
+    font-size:1.3rem;
+    color:#d8d1c2;
     margin:.9rem auto 0;
     max-width:34rem;
     text-wrap:balance;
+  }
+
+  .page{
+    max-width:46rem;
+    margin:0 auto;
+    padding:0 1.5rem 4.5rem;
   }
 
   /* ---------- role index ---------- */
@@ -107,7 +124,7 @@
     flex-wrap:wrap;
     justify-content:center;
     gap:.35rem .5rem;
-    margin:0 0 3.2rem;
+    margin:1.2rem 0 3.2rem;
     padding:0.85rem 0;
     border-top:1px solid var(--hairline);
     border-bottom:1px solid var(--hairline);
@@ -121,9 +138,9 @@
     text-transform:uppercase;
     padding:.3rem .6rem;
   }
-  nav a:hover, nav a:focus-visible{ color:var(--wine); }
-  a:focus-visible{ outline:2px solid var(--brass); outline-offset:2px; border-radius:2px; }
-  nav .sep{ color:var(--brass); align-self:center; font-size:.7rem; }
+  nav a:hover, nav a:focus-visible{ color:var(--gold-lift); }
+  a:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; border-radius:2px; }
+  nav .sep{ color:var(--gold); align-self:center; font-size:.7rem; }
 
   /* ---------- intro ---------- */
   .intro p{ margin:0 0 1.1rem; }
@@ -145,7 +162,7 @@
     font-weight:700;
     font-size:1.7rem;
     line-height:1;
-    color:var(--wine);
+    color:var(--gold-lift);
     text-align:center;
   }
   .grades p{ margin:0; }
@@ -157,15 +174,15 @@
     scroll-margin-top:1.5rem;
   }
   .role-head{
-    border-top:2px solid var(--ink);
+    border-top:2px solid var(--gold);
     padding-top:1.1rem;
   }
   .role-kicker{
     font-size:.7rem;
-    font-weight:600;
+    font-weight:700;
     letter-spacing:.26em;
     text-transform:uppercase;
-    color:var(--brass);
+    color:var(--gold-lift);
     margin:0 0 .2rem;
   }
   h2{
@@ -174,6 +191,7 @@
     font-size:2.15rem;
     line-height:1.1;
     margin:0 0 .5rem;
+    color:#fbf7ee;
   }
   .definition{
     font-family:"Cormorant Garamond",Georgia,serif;
@@ -202,16 +220,17 @@
     top:.62em;
     width:.32rem;
     height:.32rem;
-    background:var(--brass);
+    background:var(--gold);
     transform:rotate(45deg);
   }
   li strong{ font-weight:700; }
+  li em{ font-style:italic; }
 
   .test{
     margin:1.7rem 0 0;
     padding:.95rem 1.2rem;
     background:var(--test-bg);
-    border-left:3px solid var(--wine);
+    border-left:3px solid var(--gold);
   }
   .test .t-label{
     display:block;
@@ -219,7 +238,7 @@
     font-weight:700;
     letter-spacing:.24em;
     text-transform:uppercase;
-    color:var(--wine);
+    color:var(--gold-lift);
     margin-bottom:.25rem;
   }
   .test p{
@@ -228,6 +247,7 @@
     font-style:italic;
     font-size:1.22rem;
     line-height:1.4;
+    color:var(--ink);
   }
 
   /* ---------- closing ---------- */
@@ -250,9 +270,22 @@
     margin-bottom:.7rem;
     text-wrap:balance;
   }
+  footer .house-line{
+    margin-top:1.4rem;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold);
+  }
 
   @media print{
     body{ background:#fff; color:#111; }
+    .hero{ min-height:0; }
+    .hero-img, .hero-scrim{ display:none; }
+    .hero-content{ padding:1rem 0 0; }
+    h1, h2, .test p{ color:#111; text-shadow:none; }
+    .subtitle{ color:#444; }
     nav{ display:none; }
     section{ margin-top:2rem; }
     .test{ border:1px solid #999; border-left:3px solid #333; background:#fff; }
@@ -261,14 +294,18 @@
 </head>
 <body>
 
-<div class="page">
-
-  <header>
-    <p class="overline">Staff Standards &middot; Front &amp; Back of House</p>
+<header class="hero">
+  <img class="hero-img" src="assets/hero.jpg" alt="A steakhouse dining room at night — dark wood, white linen, low amber light.">
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <p class="overline">New York Prime &middot; Myrtle Beach</p>
     <h1>The A&#8209;Player Standard</h1>
     <hr class="rule">
     <p class="subtitle">What the best person in every position actually does &mdash; written so it can be hired against, coached against, and promoted against.</p>
-  </header>
+  </div>
+</header>
+
+<div class="page">
 
   <nav aria-label="Roles">
     <a href="#general">General</a><span class="sep">&#10022;</span>
@@ -445,6 +482,7 @@
   <footer>
     <p class="close-line">A players are hired sometimes &mdash; and made constantly.</p>
     <p>This page is a coaching map as much as a grading sheet: it tells every B player exactly what the next level looks like, in their own position, in observable behaviors. Hire against it, schedule against it, promote against it.</p>
+    <p class="house-line">New York Prime &middot; Myrtle Beach</p>
   </footer>
 
 </div>
