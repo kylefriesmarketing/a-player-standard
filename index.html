@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The A-Player Standard</title>
-<meta name="description" content="What defines an A player in every position at New York Prime — server, cook, host, bar, server assistant — and the standards that apply to everyone.">
+<meta name="description" content="What defines an A player in every position at New York Prime — server, cook, host, bar, server assistant, and management — with the scoring rubric to grade against.">
 <meta name="theme-color" content="#131211">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The A-Player Standard · New York Prime">
-<meta property="og:description" content="What the best person in every position actually does — server, cook, host, bar, and server assistant — written so it can be hired against, coached against, and promoted against.">
+<meta property="og:description" content="What the best person in every position actually does — server to management — written and scored so it can be hired against, coached against, and promoted against.">
 <meta property="og:url" content="https://kylefriesmarketing.github.io/a-player-standard/">
 <meta property="og:image" content="https://kylefriesmarketing.github.io/a-player-standard/assets/front.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The A-Player Standard · New York Prime">
-<meta name="twitter:description" content="What the best person in every position actually does — written so it can be hired against, coached against, and promoted against.">
+<meta name="twitter:description" content="What the best person in every position actually does — written and scored so it can be hired against, coached against, and promoted against.">
 <meta name="twitter:image" content="https://kylefriesmarketing.github.io/a-player-standard/assets/front.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥩</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -225,6 +225,21 @@
     margin:0 0 1.4rem;
     max-width:36rem;
   }
+  .kpi{
+    margin:-.85rem 0 1.5rem;
+    font-size:.85rem;
+    color:var(--smoke);
+  }
+  .kpi b{
+    font-size:.64rem;
+    font-weight:700;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--gold-lift);
+    margin-right:.55rem;
+  }
+  .score-note{ margin:1.3rem 0 0; }
+  .score-note strong{ color:var(--gold-lift); }
 
   ul{
     list-style:none;
@@ -331,12 +346,14 @@
 <div class="page">
 
   <nav aria-label="Roles">
+    <a href="#scoring">Scoring</a><span class="sep">&#10022;</span>
     <a href="#general">General</a><span class="sep">&#10022;</span>
     <a href="#server">Server</a><span class="sep">&#10022;</span>
     <a href="#cook">Cook</a><span class="sep">&#10022;</span>
     <a href="#host">Host</a><span class="sep">&#10022;</span>
     <a href="#bar">Bar</a><span class="sep">&#10022;</span>
-    <a href="#sa">Server Assistant</a>
+    <a href="#sa">Server Assistant</a><span class="sep">&#10022;</span>
+    <a href="#manager">Manager</a>
   </nav>
 
   <div class="intro">
@@ -364,12 +381,37 @@
   </div>
   <p class="strip-cap">Recent posts &middot; @newyorkprime</p>
 
+  <section id="scoring">
+    <div class="role-head">
+      <p class="role-kicker">The Instrument</p>
+      <h2>How to Score It</h2>
+    </div>
+    <p class="definition">The same page that defines the standard is the tool for grading it &mdash; one number per behavior, from shifts actually observed.</p>
+    <div class="grades">
+      <div>
+        <span class="grade-letter">3</span>
+        <p><span class="g-name">Raises the bar.</span> Models the behavior and visibly lifts the people working around them.</p>
+      </div>
+      <div>
+        <span class="grade-letter">2</span>
+        <p><span class="g-name">Meets it.</span> Shows the behavior on most shifts without being reminded.</p>
+      </div>
+      <div>
+        <span class="grade-letter">1</span>
+        <p><span class="g-name">Not yet.</span> Needs reminding, or the behavior isn&rsquo;t there &mdash; this bullet becomes the coaching focus.</p>
+      </div>
+    </div>
+    <p class="score-note"><strong>Roll-up:</strong> average the General section and the role section separately, then convert &mdash; <strong>A&nbsp;=&nbsp;2.5 or higher &middot; B&nbsp;=&nbsp;1.8&ndash;2.4 &middot; C&nbsp;=&nbsp;below 1.8.</strong> The overall grade is the <em>lower</em> of the two: role skill never outruns the entry fee.</p>
+    <p class="score-note"><strong>Cadence:</strong> new hires at 30, 60, and 90 days; everyone quarterly. Every review names one strength to keep and one focus bullet to grow, graded from shifts observed this period with specific moments cited &mdash; never from reputation. A &ldquo;C&rdquo; starts a dated coaching plan under company policy, so no one is ever surprised by their review.</p>
+  </section>
+
   <section id="general">
     <div class="role-head">
       <p class="role-kicker">Every Position</p>
       <h2>General</h2>
     </div>
     <p class="definition">The non-negotiables. None of the role-specific skill below matters without these &mdash; this is the entry fee.</p>
+    <p class="kpi"><b>Moves</b>Turnover &middot; Call-out rate &middot; Internal promotions</p>
     <ul>
       <li><strong>Reliability first.</strong> Early, in full uniform, clean, and ready at shift start. No-shows and chronic call-outs cancel out every other strength on this page.</li>
       <li><strong>Same standard every shift.</strong> A dead Tuesday at 5 p.m. gets the same effort and polish as a packed Saturday at 8. Consistency is the whole definition of professional.</li>
@@ -397,6 +439,7 @@
       <h2>Server</h2>
     </div>
     <p class="definition">A professional salesperson and the host of their own section &mdash; not an order-taker.</p>
+    <p class="kpi"><b>Moves</b>Check average &middot; Comp % &middot; Repeat guests &amp; reviews</p>
     <ul>
       <li><strong>Knows the menu cold.</strong> Every cut, temp, portion, side, sauce, and price &mdash; and can explain the difference between the ribeye and the strip with confidence. Knows the wine list well enough to pair by taste and by budget.</li>
       <li><strong>Sells without pressure.</strong> Builds the check with appetizers, wine, sides, dessert, and after-dinner drinks &mdash; and the guest feels taken care of, never hustled. Highest check average in the building with zero complaints about pushiness.</li>
@@ -421,6 +464,7 @@
       <h2>Cook</h2>
     </div>
     <p class="definition">Consistency you can build a menu on. The guest never knows who cooked their steak &mdash; and never needs to.</p>
+    <p class="kpi"><b>Moves</b>Ticket times &middot; Refire rate &middot; Food cost</p>
     <ul>
       <li><strong>Nails temps, every time.</strong> Medium-rare is medium-rare at 6:00 and at 9:45, on the first steak of the night and the two-hundredth.</li>
       <li><strong>Every plate matches the standard.</strong> Wouldn&rsquo;t send anything they wouldn&rsquo;t proudly eat themselves &mdash; and pulls a plate that misses rather than hoping it slides.</li>
@@ -445,6 +489,7 @@
       <h2>Host</h2>
     </div>
     <p class="definition">Runs the door like a control tower &mdash; the first impression, the last impression, and the pace of the entire night.</p>
+    <p class="kpi"><b>Moves</b>Quoted-vs-actual waits &middot; Walk-aways &middot; No-shows</p>
     <ul>
       <li><strong>Warm within seconds.</strong> Every guest greeted like they were expected, every departure gets a genuine goodbye. Never a flat &ldquo;how many?&rdquo; with dead eyes.</li>
       <li><strong>Owns the book.</strong> Reservations accurate, waitlist honest, quotes real times and then beats them. Trust at the door is the restaurant&rsquo;s trust.</li>
@@ -468,6 +513,7 @@
       <h2>Bar</h2>
     </div>
     <p class="definition">Two jobs done perfectly at once: full service for the bar top, and the drink engine for the entire floor.</p>
+    <p class="kpi"><b>Moves</b>Pour cost &middot; Bar check average &middot; Service-well times</p>
     <ul>
       <li><strong>Exact and consistent.</strong> Right recipe, right pour, right glass &mdash; a martini tastes identical no matter who ordered it or when.</li>
       <li><strong>The service well never waits.</strong> Floor tickets move fast even mid-conversation; servers never stand around watching their drinks die in the well.</li>
@@ -491,6 +537,7 @@
       <h2>Server Assistant</h2>
     </div>
     <p class="definition">The invisible engine of the dining room &mdash; and, done right, the next great server in training.</p>
+    <p class="kpi"><b>Moves</b>Table-turn time &middot; Turns per night</p>
     <ul>
       <li><strong>Hustle with polish.</strong> Moves fast without ever looking rushed to a guest.</li>
       <li><strong>Flips win the night.</strong> A table cleared, cleaned, and reset fast and <em>right</em> is another seating &mdash; settings aligned, silver polished, nothing missing.</li>
@@ -506,6 +553,32 @@
     <div class="test">
       <span class="t-label">The Test</span>
       <p>When they&rsquo;re on, do the sections run themselves &mdash; and do you already know they&rsquo;ll make a great server?</p>
+    </div>
+  </section>
+
+  <section id="manager">
+    <div class="role-head">
+      <p class="role-kicker">Leadership</p>
+      <h2>Manager</h2>
+    </div>
+    <p class="definition">The keeper of this page. Every standard above is only as real as the manager holding it on a Friday night.</p>
+    <p class="kpi"><b>Moves</b>Team turnover &middot; Labor % &amp; comps &middot; Review scores</p>
+    <ul>
+      <li><strong>Sets the standard by being it.</strong> First in, uniform right, same energy on a dead Tuesday as a slammed Saturday. A crew works the way its manager works &mdash; never ask for a standard you don&rsquo;t model.</li>
+      <li><strong>Coaches in the moment.</strong> Corrections are private, immediate, and tied to a specific line on this page &mdash; never a vague &ldquo;step it up.&rdquo; Praise is public and just as specific.</li>
+      <li><strong>Develops A players on purpose.</strong> Knows every person&rsquo;s next level &mdash; SA to server, server to trainer, cook to lead &mdash; and builds toward it. Promotes good people instead of hoarding them.</li>
+      <li><strong>Protects the culture on their shift.</strong> Gossip, cliques, and negativity get handled the day they appear. What a manager tolerates, they teach.</li>
+      <li><strong>Carries change from the top.</strong> Learns the <em>why</em> behind a new standard, menu, or policy, sells it to the crew with conviction, and enforces it consistently &mdash; never &ldquo;don&rsquo;t look at me, that&rsquo;s corporate.&rdquo;</li>
+      <li><strong>Communicates both directions.</strong> The floor hears the reasons, not just the rules &mdash; and ownership hears the truth from the floor fast, especially the bad news.</li>
+      <li><strong>Calmest person in the building.</strong> When the board fills and the lobby stacks, the manager triages, directs, and resets. Panic from the office spreads faster than panic from anywhere else.</li>
+      <li><strong>Owns the numbers.</strong> Labor, comps, food cost, ticket times &mdash; watched daily, explained honestly, and fixed through coaching, not fear.</li>
+      <li><strong>Fair, consistent, no favorites.</strong> The best server and the newest SA answer to the same page. Discipline is predictable, documented, and by policy.</li>
+      <li><strong>In the dining room, not the office.</strong> Touches tables every night, takes over problems before they grow &mdash; and the regulars know them by name.</li>
+      <li><strong>Hires against this page.</strong> Interview questions come from these bullets, and a warm body is never worth a C player.</li>
+    </ul>
+    <div class="test">
+      <span class="t-label">The Test</span>
+      <p>Do A players ask for their shifts &mdash; and do B players become A players under them?</p>
     </div>
   </section>
 
